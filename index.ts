@@ -9,9 +9,15 @@ books.set("1", {
 });
 
 const router = new Router();
+
+router.get("/", (context: any) => {
+  context.response.body = 'hello world'
+});
+
 router.get("/book", (context: any) => {
   context.response.body = Array.from(books.values());
 });
+
 
 const app = new Application();
 app.use(
